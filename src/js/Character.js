@@ -1,13 +1,15 @@
 class Character {
   constructor(name, type) {
+    
   }
 
-  set attack(val) {
-    this.attackValue = val;
-  }
+  //set attack(val) {
+   // this.attackValue = val;
+  //}
 
-  get attack() {
-    return this.attackValue;
+  attack(dis) {
+    return this.attackValue-10*(dis-1);
+    // return this.attackValue;
   }
 
   set stoned(val) {
@@ -18,14 +20,13 @@ class Character {
     return this.stonedValue;
   }
 
-
-  makeAttack(dis) {
-   return this.attackValue-10*(dis-1);
-  }
+  //makeAttack(dis) {
+  // return this.attackValue-10*(dis-1);
+  //}
 
 
   makeStoned(dis) {
-    return this.makeAttack(dis)- Math.log2(dis) * 5;
+    return this.attack(dis)- Math.log2(dis) * 5;
    }
  
 
