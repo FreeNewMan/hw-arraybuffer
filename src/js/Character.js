@@ -1,34 +1,19 @@
 class Character {
   constructor(name, type) {
-    
+  }
+  
+  set attack(args) { 
+    this.strength = args.strength;
+    this.distance = args.distance;
   }
 
-  //set attack(val) {
-   // this.attackValue = val;
-  //}
-
-  attack(dis) {
-    return this.attackValue-10*(dis-1);
-    // return this.attackValue;
-  }
-
-  set stoned(val) {
-    this.stonedValue = val;
+  get attack() {
+    return this.strength-10*(this.distance-1);
   }
 
   get stoned() {
-    return this.stonedValue;
+    return this.attack-Math.log2(this.distance) * 5;
   }
-
-  //makeAttack(dis) {
-  // return this.attackValue-10*(dis-1);
-  //}
-
-
-  makeStoned(dis) {
-    return this.attack(dis)- Math.log2(dis) * 5;
-   }
- 
 
 }
 
