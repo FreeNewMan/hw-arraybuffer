@@ -2,10 +2,17 @@ class Character {
   constructor(name, type) {
     this.stonedValue = false;
   }
+
+  set distance(val) {
+    this.distanceValue = val;
+  }
+
+  set attack(val) {
+    this.baseAttack = val-10*(this.distanceValue-1);
+  }
   
    get attack() {
-    let baseAtack = this.strength-10*(this.distance-1);
-    return this.stonedValue ? baseAtack-Math.log2(this.distance) * 5 : baseAtack;
+    return this.stonedValue ? this.baseAttack-Math.log2(this.distanceValue) * 5 : this.baseAttack;
   }
 
   set stoned(val) {
