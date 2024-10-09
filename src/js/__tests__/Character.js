@@ -19,6 +19,14 @@ describe('Проверка класса Character', () => {
     expect(result).toBe(70);
   });
 
+  test('Проверка установки дурмана', () => {
+    let actorCheck = new Character('Magician', 'Magician');
+    actorCheck.stoned = true;
+    let result = actorCheck.stoned;
+    expect(result).toBe(true);
+  });
+  
+  
   test('Проверка атаки на вторую клетку c дурманом', () => {
     let actorCheck = new Character('Magician', 'Magician');
     actorCheck.distance = 2;

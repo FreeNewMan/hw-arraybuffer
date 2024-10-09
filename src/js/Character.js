@@ -8,11 +8,12 @@ class Character {
   }
 
   set attack(val) {
-    this.baseAttack = val-10*(this.distanceValue-1);
+    this.baseAttack = val;
   }
   
    get attack() {
-    return this.stonedValue ? this.baseAttack-Math.log2(this.distanceValue) * 5 : this.baseAttack;
+    const  baseAtt = this.baseAttack-10*(this.distanceValue-1);
+    return this.stonedValue ? baseAtt-Math.log2(this.distanceValue) * 5 : baseAtt;
   }
 
   set stoned(val) {
